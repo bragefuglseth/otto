@@ -6,7 +6,7 @@ A simple, multipurpose Discord bot. Otto is currently a work in progress.
 
 Follow these instructions to install Otto:
 
-1. Go to the Discord developer page and create a new application. Create a new bot in your application.
+1. Go to the Discord developer page and create a new application. Create a new bot for your application.
 2. Create a test server.
 3. Fork this repository. Clone your fork into your environment.
 4. Create a copy of `.env-example` and rename it to `.env`.
