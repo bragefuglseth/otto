@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/bragefuglseth/otto/issues"
   },
-  "homepage": "https://github.com/bragefuglseth/otto#readme"
+  "homepage": "https://github.com/bragefuglseth/otto#readme",
+  "dependencies": {
+    "discord.js": "^13.6.0"
+  }
 }
