@@ -5,7 +5,9 @@
   "main": "./src/app.js",
   "scripts": {
     "start": "node ./src/app.js",
-    "start:dev": "nodemon ./src/spp.js"
+    "start:dev": "nodemon ./src/app.js",
+    "commands": "DEPLOY_GLOBALLY=true node ./tools/deploy-commands.js",
+    "commands:test": "DEPLOY_GLOBALLY=false node ./tools/deploy-commands.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +20,9 @@
   },
   "homepage": "https://github.com/bragefuglseth/otto#readme",
   "dependencies": {
+    "@discordjs/builders": "^0.12.0",
+    "@discordjs/rest": "^0.3.0",
+    "discord-api-types": "^0.26.1",
     "discord.js": "^13.6.0",
     "dotenv": "^14.3.2"
   },
