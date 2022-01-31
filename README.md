@@ -17,4 +17,4 @@ Follow these instructions to install Otto:
 
 5. Run `npm i` to install all dependencies. This project requires Node 16.13.2. Make sure you have [nvm](https://github.com/nvm-sh/nvm) installed, and run `nvm use 16.13.2`.
 6. Run `npm run commands` to deploy your application commands globally. Run `npm run commands:local` to deploy them to your test server only.
-7. Start the bot with `npm start`. If you want the bot to restart every time you save a file, run `npm start:dev`.
+7. Start the bot with `npm run start`. If you want the bot to restart every time you save a file, run `npm run start:dev`.
