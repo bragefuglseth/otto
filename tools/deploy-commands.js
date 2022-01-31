@@ -3,15 +3,12 @@ const { readdirSync } = require("fs");
 const path = require("path");
 const { REST } = require("@discordjs/rest");
 const { Routes } = require("discord-api-types/v9");
+// All commands are fetched from an external file for security reasons
+const commandList = require("../src/command-list.js");
 
 const commands = [];
-// Find the commands directory
-const commandDir = path.resolve(__dirname, "../src/commands");
-const commandFiles = readdirSync(commandDir).filter(file =>
-  file.endsWith(".js")
-);
-for (file of commandFiles) {
-  const command = require(`../src/commands/${file}`);
+for (file of commandList) {
+  const command = require(`../src/commands/${file}.js`);
   commands.push(command.data.toJSON());
 }
 
@@ -19,7 +16,6 @@ const deploymentLocation =
   process.env.DEPLOY_GLOBALLY === "true"
     ? "global"
     : process.env.TEST_SERVER_ID;
-console.log(deploymentLocation);
 const rest = new REST({ version: "9" }).setToken(process.env.DISCORD_TOKEN);
 rest
   .put(

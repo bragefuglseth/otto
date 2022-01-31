@@ -2,19 +2,15 @@ require("dotenv").config();
 const fs = require("fs");
 const path = require("path");
 const { Client, Collection, Intents } = require("discord.js");
+// All commands are fetched from an external file for security reasons
+const commandList = require("./command-list.js");
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
-// Get all files within command directory
-const commandDir = path.join(__dirname, "commands");
-const commandFiles = fs
-  .readdirSync(commandDir)
-  .filter(file => file.endsWith(".js"));
-
 // Add all JS files to a collection
 client.commands = new Collection();
-for (file of commandFiles) {
-  const command = require(`./commands/${file}`);
+for (file of commandList) {
+  const command = require(`./commands/${file}.js`);
   client.commands.set(command.data.name, command);
 }
 
